@@ -1,2 +1,2 @@
-# react-tutorial
+# React Tutorial
 Facebook's React Tutorial
