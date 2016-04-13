@@ -8,5 +8,15 @@
         "id": 1420070400000,
         "author": "Paul O’Shannessy",
         "text": "React is *great*!"
+    },
+    {
+        "id": 1460573525951,
+        "author": "Mark Zuck",
+        "text": "React is the best thing in the **world**!"
+    },
+    {
+        "id": 1460573721208,
+        "author": "Bill Gates",
+        "text": "I like ####React better than Angular"
     }
 ]
