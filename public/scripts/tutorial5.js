@@ -1,5 +1,10 @@
 'use strict'
 
+const data = [
+  {id: 1, author: "Pete Hunt", text: "This is **one** comment"},
+  {id: 2, author: "Jordan Walke", text: "This is *another* comment"}
+];
+
 const Comment = React.createClass({
   rawMarkup() {
     const rawMarkup = marked(this.props.children.toString(), {sanitize: true});
@@ -19,11 +24,19 @@ const Comment = React.createClass({
 
 const CommentList = React.createClass({
   render() {
+    const commentNodes = this.props.data.map(comment => {
+      return (
+        <div className="commentList">
+          <Comment author={comment.author} key={comment.id}>
+            {comment.text}
+          </Comment>
+        </div>
+      );      
+    });
     return (
       <div className="commentList">
-        <Comment author="Pete Hunt">This is **one** comment</Comment>
-        <Comment author="Jordan Walke">This is *another* comment</Comment>
-      </div>
+        {commentNodes}
+      </div>      
     );
   }
 });
@@ -43,7 +56,7 @@ const CommentBox = React.createClass({
     return (
       <div className="commentBox">
         <h1>Comments</h1>
-        <CommentList />
+        <CommentList data={this.props.data} />
         <CommentForm />
       </div>
     );
@@ -51,6 +64,6 @@ const CommentBox = React.createClass({
 });
 
 ReactDOM.render(
-  <CommentBox />,
+  <CommentBox data={data} />,
   document.getElementById('content')
 );
