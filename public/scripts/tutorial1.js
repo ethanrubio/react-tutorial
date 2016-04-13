@@ -1,8 +1,12 @@
-var CommentBox = React.createClass({
-  render: function() {
+'use strict'
+
+const CommentBox = React.createClass({
+  render: () => {
     return (
       React.createElement('div', {className: "commentBox"},
-        "Hello, world! I am a CommentBox"
+        React.createElement('h1', null, 
+          "Comments!"
+        )
       )
     );
   }
@@ -13,8 +17,8 @@ ReactDOM.render(
 );
 
 // non-JSX
-// var CommentBox = React.createClass({
-//   render: function() {
+// const CommentBox = React.createClass({
+//   render: () => {
 //     return (
 //       <div className="commentBox">
 //         Hello, world! I am a CommentBox.
